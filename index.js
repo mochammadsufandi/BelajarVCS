@@ -56,6 +56,18 @@ const sumArray = (arr) => {
     return [sum,average];
 }
 
+// menambahkan function untuk komparasi nilai 
+function comparator (jenis,oddVal,evenVal) { 
+    let result;
+    if (oddVal > evenVal) {
+        result = `${jenis} array ganjil lebih besar daripada ${jenis} array genap`;
+    } else if (oddVal < evenVal) {
+        result = `${jenis} array genap lebih besar daripada ${jenis} array ganjil`;
+    } else {
+        result = `${jenis} array genap sama dengan array ganjil`;
+    }
+    return result;
+}
 
 const arr = [1,2,3,4,5,6,7,8,9,10];
 let sum = sumArray(arr);
@@ -66,16 +78,24 @@ const {oddArray,evenArray} = arrayDivider(randomArray);
 const maxNumOddArray = MaxNumInArray(oddArray);
 const maxNumEvenArray = MaxNumInArray(evenArray);
 const minNumOddArray = MinNumInArray(oddArray);
-const minNumeEvenArray = MinNumInArray(evenArray);
+const minNumEvenArray = MinNumInArray(evenArray);
 const [totalOddArray,averageOddArray] = sumArray(oddArray);
 const [totalEvenArray,averageEvenArray] = sumArray(evenArray);
+const minConclusion = comparator('nilai minimum',minNumOddArray,minNumEvenArray);
+const maxConclusion = comparator('nilai maksimum',maxNumOddArray,maxNumEvenArray);
+const averageConclusion = comparator('nilai rata-rata',averageOddArray,averageEvenArray);
+const totalConclusion = comparator('jumlah total',totalOddArray,totalEvenArray);
 
-console.log(randomArray)
-console.log(oddArray)
-console.log(evenArray)
-console.log(maxNumOddArray)
-console.log(maxNumEvenArray)
-console.log(minNumOddArray)
-console.log(minNumeEvenArray)
-console.log(totalOddArray,averageOddArray)
-console.log(totalEvenArray,averageEvenArray)
+console.log(randomArray);
+console.log(oddArray);
+console.log(evenArray);
+console.log(maxNumOddArray);
+console.log(maxNumEvenArray);
+console.log(minNumOddArray);
+console.log(minNumEvenArray);
+console.log(totalOddArray,averageOddArray);
+console.log(totalEvenArray,averageEvenArray);
+console.log(minConclusion);
+console.log(maxConclusion);
+console.log(averageConclusion);
+console.log(totalConclusion);
